@@ -1,13 +1,36 @@
 import { readFileSync } from "node:fs";
 import { misc } from "@varavel/vdl-plugin-sdk/utils";
 
-// This file is only a tiny example of extra fixture checks.
-// Keep files like this small and focused.
+/**
+ * Detects whether a value contains a `position` key at any depth.
+ *
+ * @param value - Parsed JSON value to inspect.
+ * @returns `true` when at least one `position` key exists.
+ */
+function hasPositionKey(value: unknown): boolean {
+  if (Array.isArray(value)) {
+    return value.some(hasPositionKey);
+  }
 
-const helloTxtGot = readFileSync("gen/hello.txt", "utf-8");
-const helloTxtExpected = "Hello from VDL Plugin";
+  if (value && typeof value === "object") {
+    for (const [key, nestedValue] of Object.entries(value)) {
+      if (key === "position") {
+        return true;
+      }
+
+      if (hasPositionKey(nestedValue)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+const metaJson = readFileSync("gen/vdl-meta.json", "utf-8");
+const parsedMeta = JSON.parse(metaJson);
 
 misc.assert(
-  helloTxtGot === helloTxtExpected,
-  `hello.txt content mismatch. Expected: "${helloTxtExpected}", got: "${helloTxtGot}"`,
+  hasPositionKey(parsedMeta) === false,
+  "Expected generated metadata to omit all position keys by default.",
 );

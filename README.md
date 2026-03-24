@@ -45,14 +45,14 @@ const config = {
 Then run:
 
 ```bash
-npx vdl generate
+vdl generate
 ```
 
 The plugin writes one JSON file inside your `outDir`.
 
 ## Plugin behavior
 
-The plugin writes one JSON file containing the VDL IR.
+The plugin writes one JSON file containing the VDL IR. The output structure strictly follows the [VDL Intermediate Representation (IR) schema](https://github.com/varavelio/vdl/blob/main/schemas/ir.vdl).
 
 ### Options
 

@@ -1,4 +1,4 @@
-# VDL Plugin Template
+# VDL Plugin Meta
 
 ## Summary
 
@@ -21,3 +21,4 @@ When updating this document, do so with the context of the entire document in mi
 - Keep implementations aligned with SDK patterns from the manual.
 - Use the SDK utility functions when possible to avoid duplicating code.
 - `e2e/` this directory contains end to end tests. Recommended structure: one fixture folder per test.
+- Prefer output-oriented option names (`outFile`, `outDir`) and keep defaults explicit in plugin code and tests.

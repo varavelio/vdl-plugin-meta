@@ -1,3 +1,272 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`VDL Plugin: end-to-end tests > compiles fixture: simpletest > hello.txt 1`] = `"Hello from VDL Plugin"`;
+exports[`VDL Plugin: end-to-end tests > compiles fixture: simpletest > vdl-meta.json 1`] = `
+"{
+  "entryPoint": "/workspaces/vdl-plugin-meta/e2e/fixtures/simpletest/schema.vdl",
+  "constants": [],
+  "enums": [],
+  "types": [
+        {
+          "name": "FooType",
+          "annotations": [],
+          "typeRef": {
+              "kind": "object",
+              "objectFields": [
+                {
+                  "name": "firstField",
+                  "optional": false,
+                  "annotations": [],
+                  "typeRef": {
+                      "kind": "primitive",
+                      "primitiveName": "string"
+                    }
+                },
+                {
+                  "name": "secondField",
+                  "optional": false,
+                  "annotations": [],
+                  "typeRef": {
+                      "kind": "array",
+                      "arrayType": {
+                        "kind": "primitive",
+                        "primitiveName": "int"
+                      },
+                      "arrayDims": 1
+                    }
+                }
+              ]
+            }
+        },
+        {
+          "name": "MyRpc",
+          "annotations": [
+            {
+              "name": "rpc"
+            }
+          ],
+          "typeRef": {
+            "kind": "object",
+            "objectFields": [
+              {
+                "name": "barProc",
+                "optional": false,
+                "annotations": [
+                  {
+                    "name": "proc"
+                  }
+                ],
+                "typeRef": {
+                  "kind": "object",
+                  "objectFields": [
+                    {
+                      "name": "input",
+                      "optional": false,
+                      "annotations": [],
+                      "typeRef": {
+                          "kind": "object",
+                          "objectFields": [
+                            {
+                              "name": "foo",
+                              "optional": false,
+                              "annotations": [],
+                              "typeRef": {
+                                  "kind": "type",
+                                  "typeName": "FooType"
+                                }
+                            }
+                          ]
+                        }
+                    },
+                    {
+                      "name": "output",
+                      "optional": false,
+                      "annotations": [],
+                      "typeRef": {
+                          "kind": "object",
+                          "objectFields": [
+                            {
+                              "name": "baz",
+                              "optional": false,
+                              "annotations": [],
+                              "typeRef": {
+                                  "kind": "primitive",
+                                  "primitiveName": "bool"
+                                }
+                            }
+                          ]
+                        }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+  "docs": []
+}
+"
+`;
+
+exports[`VDL Plugin: end-to-end tests > compiles fixture: withpositions > schema.json 1`] = `
+"{
+  "entryPoint": "/workspaces/vdl-plugin-meta/e2e/fixtures/withpositions/schema.vdl",
+  "constants": [],
+  "enums": [],
+  "types": [
+        {
+          "position": {
+            "file": "/workspaces/vdl-plugin-meta/e2e/fixtures/withpositions/schema.vdl",
+            "line": 3,
+            "column": 1
+          },
+          "name": "FooType",
+          "annotations": [],
+          "typeRef": {
+              "kind": "object",
+              "objectFields": [
+                {
+                  "position": {
+                    "file": "/workspaces/vdl-plugin-meta/e2e/fixtures/withpositions/schema.vdl",
+                    "line": 4,
+                    "column": 3
+                  },
+                  "name": "firstField",
+                  "optional": false,
+                  "annotations": [],
+                  "typeRef": {
+                      "kind": "primitive",
+                      "primitiveName": "string"
+                    }
+                },
+                {
+                  "position": {
+                    "file": "/workspaces/vdl-plugin-meta/e2e/fixtures/withpositions/schema.vdl",
+                    "line": 5,
+                    "column": 3
+                  },
+                  "name": "secondField",
+                  "optional": false,
+                  "annotations": [],
+                  "typeRef": {
+                      "kind": "array",
+                      "arrayType": {
+                        "kind": "primitive",
+                        "primitiveName": "int"
+                      },
+                      "arrayDims": 1
+                    }
+                }
+              ]
+            }
+        },
+        {
+          "position": {
+            "file": "/workspaces/vdl-plugin-meta/e2e/fixtures/withpositions/schema.vdl",
+            "line": 8,
+            "column": 1
+          },
+          "name": "MyRpc",
+          "annotations": [
+            {
+              "position": {
+                "file": "/workspaces/vdl-plugin-meta/e2e/fixtures/withpositions/schema.vdl",
+                "line": 8,
+                "column": 1
+              },
+              "name": "rpc"
+            }
+          ],
+          "typeRef": {
+            "kind": "object",
+            "objectFields": [
+              {
+                "position": {
+                  "file": "/workspaces/vdl-plugin-meta/e2e/fixtures/withpositions/schema.vdl",
+                  "line": 10,
+                  "column": 3
+                },
+                "name": "barProc",
+                "optional": false,
+                "annotations": [
+                  {
+                    "position": {
+                      "file": "/workspaces/vdl-plugin-meta/e2e/fixtures/withpositions/schema.vdl",
+                      "line": 10,
+                      "column": 3
+                    },
+                    "name": "proc"
+                  }
+                ],
+                "typeRef": {
+                  "kind": "object",
+                  "objectFields": [
+                    {
+                      "position": {
+                        "file": "",
+                        "line": 12,
+                        "column": 5
+                      },
+                      "name": "input",
+                      "optional": false,
+                      "annotations": [],
+                      "typeRef": {
+                          "kind": "object",
+                          "objectFields": [
+                            {
+                              "position": {
+                                "file": "",
+                                "line": 13,
+                                "column": 7
+                              },
+                              "name": "foo",
+                              "optional": false,
+                              "annotations": [],
+                              "typeRef": {
+                                  "kind": "type",
+                                  "typeName": "FooType"
+                                }
+                            }
+                          ]
+                        }
+                    },
+                    {
+                      "position": {
+                        "file": "",
+                        "line": 16,
+                        "column": 5
+                      },
+                      "name": "output",
+                      "optional": false,
+                      "annotations": [],
+                      "typeRef": {
+                          "kind": "object",
+                          "objectFields": [
+                            {
+                              "position": {
+                                "file": "",
+                                "line": 17,
+                                "column": 7
+                              },
+                              "name": "baz",
+                              "optional": false,
+                              "annotations": [],
+                              "typeRef": {
+                                  "kind": "primitive",
+                                  "primitiveName": "bool"
+                                }
+                            }
+                          ]
+                        }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+  "docs": []
+}
+"
+`;

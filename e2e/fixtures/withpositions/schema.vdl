@@ -1,0 +1,20 @@
+// Small schema focused on verifying includePositions behavior.
+
+type FooType {
+  firstField string
+  secondField int[]
+}
+
+@rpc
+type MyRpc {
+  @proc
+  barProc {
+    input {
+      foo FooType
+    }
+
+    output {
+      baz bool
+    }
+  }
+}

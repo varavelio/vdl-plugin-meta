@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { misc } from "@varavel/vdl-plugin-sdk/utils";
+import * as misc from "@varavel/vdl-plugin-sdk/utils/misc";
 
 /**
  * Detects whether a value contains a `position` key at any depth.

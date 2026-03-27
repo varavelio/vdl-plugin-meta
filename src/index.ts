@@ -3,7 +3,7 @@ import {
   type IrSchema,
   type PluginInput,
 } from "@varavel/vdl-plugin-sdk";
-import { options } from "@varavel/vdl-plugin-sdk/utils";
+import * as options from "@varavel/vdl-plugin-sdk/utils/options";
 
 const DEFAULT_OUTPUT_FILE = "vdl-meta.json";
 

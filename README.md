@@ -12,6 +12,15 @@
   Generate VDL Intermediate Representation (IR) as JSON.
 </p>
 
+<p align="center">
+  <a href="https://varavel.com">
+    <img src="https://cdn.jsdelivr.net/gh/varavelio/brand@1.0.0/dist/badges/project.svg" alt="A Varavel project"/>
+  </a>
+  <a href="https://varavel.com/vdl">
+    <img src="https://cdn.jsdelivr.net/gh/varavelio/brand@1.0.0/dist/badges/vdl-plugin.svg" alt="VDL Plugin"/>
+  </a>
+</p>
+
 `vdl-plugin-meta` exports your VDL schema IR into a JSON file so your apps can inspect schema structure at runtime.
 
 Use it when you want reflection-like capabilities such as:

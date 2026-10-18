@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import * as misc from "@varavel/vdl-plugin-sdk/utils/misc";
+import { assert } from "@varavel/vdl-plugin-sdk";
 
 /**
  * Detects whether a value contains a `position` key at any depth.
@@ -30,7 +30,7 @@ function hasPositionKey(value: unknown): boolean {
 const metaJson = readFileSync("gen/schema.json", "utf-8");
 const parsedMeta = JSON.parse(metaJson);
 
-misc.assert(
+assert(
   hasPositionKey(parsedMeta) === true,
   "Expected generated metadata to keep position keys when includePositions is enabled.",
 );

@@ -41,7 +41,7 @@ exports[`VDL Plugin: end-to-end tests > compiles fixture: simpletest > vdl-meta.
           "name": "MyRpc",
           "annotations": [
             {
-              "name": "rpc"
+              "name": "httpRpc"
             }
           ],
           "typeRef": {
@@ -174,7 +174,7 @@ exports[`VDL Plugin: end-to-end tests > compiles fixture: withpositions > schema
                 "line": 8,
                 "column": 1
               },
-              "name": "rpc"
+              "name": "httpRpc"
             }
           ],
           "typeRef": {
